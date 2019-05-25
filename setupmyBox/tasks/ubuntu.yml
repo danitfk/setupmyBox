@@ -1,17 +1,13 @@
 ---
 - name: Upgrade All packages
-  apt: name="*" state="latest"
+  apt: name="*" state="latest" force_apt_get=True
 
-- name: Install Development Tools
-  apt: name="DevelopmenTools" state="present"
+- name: Install Development Packages
+  apt: name="build-essential" state="present"
 
 - name: Reboot System
   reboot:
   when: reboot
-
-- name: Setup APT Proxy
-  template: src="apt-proxy.conf" dest="/etc/apt.conf.d/99-proxy"  
-  when: proxy
 
 - name: "Install handy tools"
   apt: name="{{ packages }}" state=present
