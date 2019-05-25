@@ -1,0 +1,9 @@
+---
+# defaults file for setupmyBox
+# Reboot system after kernel upgraded
+reboot: true
+
+# Settings for proxy
+proxy: true
+http_proxy: http://gateway.gordi.ir:30001/
+https_proxy: http://gateway.gordi.ir:30001/

@@ -1,0 +1,30 @@
+---
+- name: Upgrade All packages
+  apt: name="*" state="latest"
+
+- name: Install Development Tools
+  apt: name="DevelopmenTools" state="present"
+
+- name: Reboot System
+  reboot:
+  when: reboot
+
+- name: Setup APT Proxy
+  template: src="apt-proxy.conf" dest="/etc/apt.conf.d/99-proxy"  
+  when: proxy
+
+- name: "Install handy tools"
+  apt: name="{{ packages }}" state=present
+  vars:
+    packages:
+    - htop
+    - nload
+    - iotop
+    - iftop
+    - traceroute
+    - telnet
+    - mtr
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
+   

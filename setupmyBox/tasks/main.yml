@@ -1,0 +1,15 @@
+---
+- name: "OS Requirements"
+  include_tasks: ubuntu.yml
+
+- name: "Setup Proxy"
+  include_tasks: proxy.yml
+  when: proxy
+
+- name: "Install Docker"
+  include_tasks: docker.yml
+  when: docker
+
+- name: "Reboot System if needed"
+  include_tasks: reboot.yml
+  when: reboot
