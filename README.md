@@ -27,10 +27,12 @@ Including an example of how to use your role (for instance, with variables passe
 ```
 ---
 - hosts: localhost
-  remote_user: root
+  become: true
   roles:
     - setupmyBox
 
 ```
 
 
+
+![Ubuntu](https://github.com/danitfk/setupmyBox/blob/master/.github/ubuntu.png?raw=true)  ![Ansible](https://github.com/danitfk/setupmyBox/blob/master/.github/ansible.png?raw=true)  ![Docker](https://github.com/danitfk/setupmyBox/blob/master/.github/docker.png?raw=true) 
