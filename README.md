@@ -9,8 +9,9 @@ Features
 1. Upgrade all packages in OS
 2. Setup Proxy for apt and system wide
 3. Install Docker
-4. Reboot System if needed
-5. ...
+4. Install Kubernets packages
+5. Reboot System if needed
+6. ...
 
 
 Role Variables
@@ -35,4 +36,4 @@ Including an example of how to use your role (for instance, with variables passe
 
 
 
-![Ubuntu](https://github.com/danitfk/setupmyBox/blob/master/.github/ubuntu.png?raw=true)  ![Ansible](https://github.com/danitfk/setupmyBox/blob/master/.github/ansible.png?raw=true)  ![Docker](https://github.com/danitfk/setupmyBox/blob/master/.github/docker.png?raw=true) 
+![Ubuntu](https://github.com/danitfk/setupmyBox/blob/master/.github/ubuntu.png?raw=true)  ![Ansible](https://github.com/danitfk/setupmyBox/blob/master/.github/ansible.png?raw=true)  ![Docker](https://github.com/danitfk/setupmyBox/blob/master/.github/docker.png?raw=true)  ![Kubernetes](https://github.com/danitfk/setupmyBox/blob/master/.github/kubernetes.png?raw=true)

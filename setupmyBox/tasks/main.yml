@@ -10,6 +10,11 @@
   include_tasks: docker.yml
   when: docker
 
+- name: "Install Kubernetes"
+  include_tasks: kubernetes.yml
+  when: kubernetes
+
 - name: "Reboot System if needed"
   include_tasks: reboot.yml
   when: reboot
+

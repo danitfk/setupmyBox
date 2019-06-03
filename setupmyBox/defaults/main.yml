@@ -11,3 +11,6 @@ https_proxy: http://gateway.gordi.ir:30001/
 
 # Docker
 docker: true
+
+# Kubernetes
+kubernetes: true
