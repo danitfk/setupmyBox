@@ -3,7 +3,19 @@
   apt_key: url="https://download.docker.com/linux/ubuntu/gpg" id="9DC858229FC7DD38854AE2D88D81803C0EBFCD88" state="present"
 
 - name: "Add Docker Repository"
-  apt_repository: repo="deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+  apt_repository: repo="deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" state="present"
 
 - name: "Install Docker-ce"
   apt: name="docker-ce" state="present"
+
+- name: "Enable HTTP Proxy in Docker Systemd file"
+  lineinfile: path="/lib/systemd/system/docker.service" line=Environment=http_proxy="{{ http_proxy }}" state=present insertbefore="KillMode=process"
+
+- name: "Enable HTTPS Proxy in Docker Systemd file"
+  lineinfile: path="/lib/systemd/system/docker.service" line=Environment=https_proxy="{{ https_proxy }}" state=present insertbefore="KillMode=process"
+
+- name: "Relaod Systemd Daemon"
+  systemd: daemon_reload="yes"
+
+- name: "Restart Docker Service"
+  service: name="docker" state="restarted"
